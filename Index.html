@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="mystyle3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+<script src="modernizr-1.6.min.js"></script>
+<script type="text/javascript">
+window.addEventListener('load', eventWindowLoaded, false);
+function eventWindowLoaded() {
+   settingsAtStart();
+}
+
+function settingsAtStart()
+{
+
+
+   //alert("settings at start");
+   var canvas = document.getElementById('myCanvas');
+
+   var ctx = canvas.getContext('2d');
+
+   // clear the canvas. Will also help when the loop runs.
+   ctx.clearRect(0,0, 530, 400);
+   // create a line
+
+   ctx.beginPath();
+   ctx.moveTo(20,35);
+   ctx.lineTo(20, 375);
+   ctx.lineTo(375,375);
+   ctx.lineTo(500, 375);
+   ctx.lineTo(360,375);
+   ctx.lineTo(20,35);
+   //ctx.MoveTo(375,375);
+   ctx.fillStyle='#DEB887';
+   ctx.fill();
+   ctx.stroke();
+
+   // increment x's place by 10;
+
+   // create a circle
+   ctx.beginPath();
+   // down below is the new ball
+   ctx.arc(63, 35, 30, 0, Math.PI * 2, true);
+   ctx.fillStyle="#FF6347";
+   ctx.closePath();
+   ctx.fill();
+   ctx.stroke();
+   // down below is the original ball
+   ctx.beginPath();
+   ctx.arc(115, 95, 25, 0, Math.PI * 2, true);
+   ctx.fillStyle="#83d0f2";
+   ctx.closePath();
+   // fill in color in the circle
+   ctx.fill();
+   // put the color on its circumference
+   ctx.stroke();
+}
+
+
+
+function canvasApp() {
+
+  function draw(){
+
+           var canvas = document.getElementById('myCanvas');
+
+            var ctx = canvas.getContext('2d');
+
+            // clear the canvas. Will also help when the loop runs.
+            ctx.clearRect(0,0, 530, 400);
+            // create a line
+            /*
+            ctx.beginPath();
+            ctx.moveTo(35,340);
+            ctx.lineTo(500, 340);
+            ctx.lineTo(500, 350);
+            ctx.lineTo(35, 350);
+            ctx.lineTo(35, 340);
+            ctx.stroke();
+            */
+            ctx.beginPath();
+            ctx.moveTo(20,35);
+            ctx.lineTo(20, 375);
+            ctx.lineTo(375,375);
+            ctx.lineTo(500, 375);
+            ctx.lineTo(360,375);
+            ctx.lineTo(20,35);
+            //ctx.MoveTo(375,375);
+            ctx.fillStyle='#DEB887';
+            ctx.fill();
+            ctx.stroke();
+
+            // increment x's place by 10;
+
+           /*
+            if(x<483 && flag== 0)
+
+            x+=speed;
+
+            else{
+              x-=speed;
+              flag= -1;
+              if(x<45)
+                 flag=0;
+            }
+            */
+            if(y<350)
+            {
+            //alert("x is "+x);
+            x+=2;
+            y+=2;
+            }
+            else if(x<481.4) {
+                //alert("x is "+x);
+                if(x>=480)
+                   {
+                  //   alert("first ball"+x);
+                     clearInterval(flag);
+                   }
+
+              x+=5;
+            }
+
+            if(n<345)
+            {
+            //alert("x is "+x);
+            m+=3;
+            n+=3;
+            }
+            else if(m<500) {
+                //alert("m is "+x);
+
+                if(m>=486)
+                   {
+                     //alert("second ball"+m);
+                     clearInterval(secondFlag);
+                   }
+
+              m+=5;
+            }
+            // create a circle
+            ctx.beginPath();
+            // down below is the new ball
+            ctx.arc(m, n, 30, 0, Math.PI * 2, true);
+            ctx.fillStyle="#FF6347";
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            // down below is the original ball
+
+            ctx.beginPath();
+            ctx.arc(x, y, 25, 0, Math.PI * 2, true);
+            ctx.fillStyle="#83d0f2";
+            ctx.closePath();
+            // fill in color in the circle
+            ctx.fill();
+            // put the color on its circumference
+            ctx.stroke();
+
+        }
+
+
+
+
+
+   //var y = 300;
+   //var x = 75;
+   var x= 115;
+   var y= 95;
+   var m= 63;
+   var n = 35;
+
+   var flag = setInterval(draw, 33);
+   var secondFlag = setInterval(draw, 33);
+
+
+
+
+}
+
+
+
+
+
+
+
+
+</script>
+
+</head>
+<body>
+<!--
+<p id="heading"><font size="6">Motion on an inclined Plane</font></p>
+
+<input id="slideButton"type= "button" value="slide" onClick= "canvasApp()">
+<input type= "button" value="Reset" onClick= "settingsAtStart()">
+<input type= "button" value="Next" onclick="location.href = 'SlidingImage.html';">
+<div style="position: absolute; top: 40px; left: 50px;">
+
+<canvas id="myCanvas" width="530" height="400"></canvas>
+
+</canvas>
+</div>
+-->
+
+
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <img src="Education.png"  width="112" height="28">
+          </a>
+
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input class="input is-primary" type="text" placeholder="Search" style="margin-top: 10px; ">
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Year 11
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Overview
+          </a>
+          <a class="navbar-item">
+            Elements
+          </a>
+          <a class="navbar-item">
+            Components
+          </a>
+          <hr class="navbar-divider">
+          <div class="navbar-item">
+            Version 0.6.2
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Year12
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Overview
+          </a>
+          <a class="navbar-item">
+            Elements
+          </a>
+          <a class="navbar-item">
+            Components
+          </a>
+          <hr class="navbar-divider">
+          <div class="navbar-item">
+            Version 0.6.2
+          </div>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          MiddleSchool
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Overview
+          </a>
+          <a class="navbar-item">
+            Elements
+          </a>
+          <a class="navbar-item">
+            Components
+          </a>
+          <hr class="navbar-divider">
+          <div class="navbar-item">
+            Version 0.6.2
+          </div>
+        </div>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://localhost:4000" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://localhost:4000&amp;via=jgthms">
+                <span class="icon">
+                  <i class="fab fa-twitter"></i>
+                </span>
+                <span>
+                  Tweet
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-primary" href="#">
+                <span class="icon">
+                <i class="fa fa-sign-in" ></i>
+                </span>
+                <span>Sign In</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      </nav>
+
+
+      <section class="hero is-danger is-medium">
+  			 <div class="hero-body">
+  				 <h1 class="title" >
+  						Motion with friction.
+  				 </h1>
+  				 <p class="subtitle">
+  					 An animation showing various forces that act on motion with friction.
+  				 </p>
+  				 <nav class="breadcrumb has-bullet-separator is-primary" aria-label="breadcrumbs" >
+  				</nav>
+  			 </div>
+  		 </section>
+
+
+
+
+
+
+
+       <hr id="hrOne">
+
+           <a class="button is-success" onClick= "canvasApp()" style="margin-left: 60%; margin-top:3%; position: absolute;">Play</a>
+
+           <a class="button is-danger" onClick= "settingsAtStart()" style="margin-left: 65%; margin-top:3%; position: absolute;">Reset</a>
+
+           <canvas id="myCanvas" width="700" height="400" style="border: 2px solid black;
+           margin-left: 25%; margin-top: 0px;"></canvas>
+
+     <hr id="hrTwo">
+
+     <article class="media">
+     	<figure class="media-left">
+     		<p class="image is-64x64">
+     			<img src="https://bulma.io/images/placeholders/128x128.png">
+     		</p>
+     	</figure>
+     	<div class="media-content">
+     		<div class="content">
+     			<p>
+     				<strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+     				<br>
+     				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+     			</p>
+     		</div>
+     		<nav class="level is-mobile">
+     			<div class="level-left">
+     				<a class="level-item">
+     					<span class="icon is-small"><i class="fas fa-reply"></i></span>
+     				</a>
+     				<a class="level-item">
+     					<span class="icon is-small"><i class="fas fa-retweet"></i></span>
+     				</a>
+     				<a class="level-item">
+     					<span class="icon is-small"><i class="fas fa-heart"></i></span>
+     				</a>
+     			</div>
+     		</nav>
+     	</div>
+     	<div class="media-right">
+     		<button class="delete"></button>
+     	</div>
+     </article>
+     <hr id="hrThree">
+     <article class="media">
+       <figure class="media-left">
+         <p class="image is-64x64">
+           <img src="https://bulma.io/images/placeholders/128x128.png">
+         </p>
+       </figure>
+       <div class="media-content">
+         <div class="field">
+           <p class="control">
+             <textarea class="textarea" placeholder="Add a comment..."></textarea>
+           </p>
+         </div>
+         <nav class="level">
+           <div class="level-left">
+             <div class="level-item">
+               <a class="button is-info">Submit</a>
+             </div>
+           </div>
+           <div class="level-right">
+             <div class="level-item">
+               <label class="checkbox">
+                 <input type="checkbox"> Press enter to submit
+               </label>
+             </div>
+           </div>
+         </nav>
+       </div>
+     </article>
+
+     <hr id="hrFour">
+     			<section class="hero is-success is-medium">
+     		 	 <div class="hero-body">
+     		 		 <h1 class="title">
+     		 				Description
+     		 		 </h1>
+     		 		 <p class="subtitle">
+     		 			 The animation shows...
+     		 		 </p>
+     		 		 <nav class="breadcrumb has-bullet-separator is-primary" aria-label="breadcrumbs" >
+     		 		</nav>
+     		 	 </div>
+     		  </section>
+
+
+
+
+
+     			<section class="hero is-dark is-medium">
+     				<div class="hero-body">
+     					<div class="container">
+
+     						<div class="columns content" id="footerText">
+
+     									 <div class="column is-one-third">
+     							<p class="Footer text is-size-5" id ="paragraphFooter">
+     										 Our mission is to facilitate education </br>
+     										 with the help of animations. It's free and </br>
+     										 open to all!
+     							</p>
+
+
+
+
+     							<p id="Info">
+     						<strong>Eduphillia</strong> is developed by <a href="https://www.csiro.com.au">CSIRO</a>. The source code is licensed
+     						<a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+     						is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+     						 </p>
+     					</div>
+
+     					<div class="column is-one-third"><p class="Footer text is-size-5" id ="paragraphFooter2">
+     								About
+     					</p></div>
+     					<div class="column is-one-third"><p class="Footer text is-size-5" id ="paragraphFooter3">
+     								Contact
+     					</p></div>
+
+
+
+     					</div>
+
+     					</div>
+     				</div>
+     			</section>
+
+
+</body>
+</html>

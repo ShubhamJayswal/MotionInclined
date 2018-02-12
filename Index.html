@@ -43,7 +43,7 @@ function settingsAtStart()
    // create a circle
    ctx.beginPath();
    // down below is the new ball
-   ctx.arc(63, 35, 30, 0, Math.PI * 2, true);
+   ctx.arc(63, 43, 25, 0, Math.PI * 2, true);
    ctx.fillStyle="#FF6347";
    ctx.closePath();
    ctx.fill();
@@ -124,16 +124,16 @@ function canvasApp() {
               x+=5;
             }
 
-            if(n<345)
+            if(n<350)
             {
             //alert("x is "+x);
-            m+=3;
-            n+=3;
+            m+=2;
+            n+=2;
             }
             else if(m<500) {
                 //alert("m is "+x);
 
-                if(m>=486)
+                if(m>=480)
                    {
                      //alert("second ball"+m);
                      clearInterval(secondFlag);
@@ -144,7 +144,7 @@ function canvasApp() {
             // create a circle
             ctx.beginPath();
             // down below is the new ball
-            ctx.arc(m, n, 30, 0, Math.PI * 2, true);
+            ctx.arc(m, n, 25, 0, Math.PI * 2, true);
             ctx.fillStyle="#FF6347";
             ctx.closePath();
             ctx.fill();
@@ -172,7 +172,7 @@ function canvasApp() {
    var x= 115;
    var y= 95;
    var m= 63;
-   var n = 35;
+   var n = 43;
 
    var flag = setInterval(draw, 33);
    var secondFlag = setInterval(draw, 33);
